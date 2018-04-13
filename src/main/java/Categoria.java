@@ -17,9 +17,6 @@ public class Categoria {
 
 	}
 
-	public void finalize() throws Throwable {
-
-	}
 	public double cargoMensual(){
 		return 0;
 	}

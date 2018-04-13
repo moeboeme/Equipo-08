@@ -14,11 +14,5 @@ public class Usuarios {
 	private String nombreUsuario;
 	private String password;
 
-	public Usuarios(){
 
-	}
-
-	public void finalize() throws Throwable {
-
-	}
 }//end Usuarios

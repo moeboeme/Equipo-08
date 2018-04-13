@@ -11,16 +11,13 @@ public class Dispositivo {
 	private boolean estaEncendido;
 	private String nombre;
 
-	public Dispositivo(double _consumoPorHora, boolean _estaEncendido, String _nombre){
-		this.consumoPorHora = _consumoPorHora;
-		this.estaEncendido = _estaEncendido;
-		this.nombre = _nombre;
+	public Dispositivo(double myConsumoPorHora, boolean myEstaEncendido, String myNombre){
+		this.consumoPorHora = myConsumoPorHora;
+		this.estaEncendido = myEstaEncendido;
+		this.nombre = myNombre;
 
 	}
 
-	public void finalize() throws Throwable {
-
-	}
 	public double consumoPorHora(){
 		return consumoPorHora;
 	}

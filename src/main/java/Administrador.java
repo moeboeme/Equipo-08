@@ -11,9 +11,6 @@ public class Administrador extends Usuarios {
 
 	}
 
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
 	public int antiguedadEnDias(){
 		return 0;
 	}

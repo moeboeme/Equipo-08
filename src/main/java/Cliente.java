@@ -12,24 +12,22 @@ public class Cliente extends Usuarios {
 	
 	private Categoria categoria;
 	private List<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
-	private double numeroDocumento;
-	private double telefono;
+	private int dni;
+	private long telefono;
 	private String tipoDocumento;
 	public Dispositivo m_Dispositivo;
-	public Categoria m_Categoria;
 
-	public Cliente(Categoria _categoria,List<Dispositivo> _dispositivos, double _numeroDocumento, double _telefono, String _tipoDocumento){
-		this.categoria = _categoria;
-		this.dispositivos = _dispositivos;
-		this.numeroDocumento = _numeroDocumento;
-		this.telefono = _telefono;
-		this.tipoDocumento = _tipoDocumento;
+	public Cliente (Categoria myCategoria,List<Dispositivo> myDispositivos, 
+			int myDni, long myTelefono, String tipoDni)
+	{
+		this.categoria = myCategoria;
+		this.dispositivos = myDispositivos;
+		this.dni = myDni;
+		this.telefono = myTelefono;
+		this.tipoDocumento = tipoDni;
 		
 	}
 
-	public void finalize() throws Throwable {
-		super.finalize();
-	}
 	public long dispositivosApagados(){
 		return dispositivos.stream().filter(d -> !d.estaEncendido()).count();
 	}
