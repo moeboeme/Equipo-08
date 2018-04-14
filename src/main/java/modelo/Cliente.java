@@ -1,3 +1,6 @@
+package modelo;
+
+
 /**
  * @author Lautaro
  * @version 1.0
@@ -8,14 +11,14 @@ import java.util.List;
 
 
 
-public class Cliente extends Usuarios {
-	
+public class Cliente extends Usuario 
+{
 	private Categoria categoria;
-	private List<Dispositivo> dispositivos = new ArrayList<Dispositivo>();
+	private List<Dispositivo> dispositivos;
 	private int dni;
 	private long telefono;
 	private String tipoDocumento;
-	public Dispositivo m_Dispositivo;
+	private int numeroDocumento;
 
 	public Cliente (Categoria myCategoria,List<Dispositivo> myDispositivos, 
 			int myDni, long myTelefono, String tipoDni)
@@ -27,20 +30,23 @@ public class Cliente extends Usuarios {
 		this.tipoDocumento = tipoDni;
 		
 	}
-
-	public long dispositivosApagados(){
-		return dispositivos.stream().filter(d -> !d.estaEncendido()).count();
+	
+	
+	public int dispositivosApagados(){
+		return (int) this.dispositivos.stream().filter(d -> !d.estaEncendido()).count();
 	}
 
-	public long dispositivosEncendidos(){
-		return dispositivos.stream().filter(d -> d.estaEncendido()).count();
+	public int dispositivosEncendidos(){
+		return (int) dispositivos.stream().filter(d -> d.estaEncendido()).count();
 	}
 
-	public boolean hayEncendido(){
+	public boolean existeDispositivoEncendido(){
 		return dispositivos.stream().anyMatch(d->d.estaEncendido());
 	}
 
 	public int totalDispostivos(){
 		return dispositivos.size();
 	}
+	
+
 }//end Cliente
