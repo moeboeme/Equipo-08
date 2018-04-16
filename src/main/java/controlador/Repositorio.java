@@ -1,5 +1,6 @@
-package modelo;
-
+package controlador;
+import modelo.Dispositivo;
+import modelo.Cliente;
 import java.util.List;
 
 /**
