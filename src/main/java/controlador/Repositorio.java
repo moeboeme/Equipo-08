@@ -4,7 +4,7 @@ import modelo.Cliente;
 import java.util.List;
 
 /**
- * @author Jay
+ * @author Gastón Di Filippo
  * @version 1.0
  * @created 13-Apr-2018 8:57:52 PM
  */

@@ -19,15 +19,28 @@ public class Dispositivo {
 
 	}
 
-	public double consumoPorHora(){
+	public double getConsumoPorHora() {
 		return consumoPorHora;
 	}
 
-	public boolean estaEncendido(){
+	public void setConsumoPorHora(double consumoPorHora) {
+		this.consumoPorHora = consumoPorHora;
+	}
+
+	public boolean estaEncendido() {
 		return estaEncendido;
 	}
 
-	public String nombre(){
+	public void setEstaEncendido(boolean estaEncendido) {
+		this.estaEncendido = estaEncendido;
+	}
+
+	public String getNombre() {
 		return nombre;
 	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
 }//end Dispositivo
