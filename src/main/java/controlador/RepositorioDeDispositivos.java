@@ -12,48 +12,42 @@ import java.util.ArrayList;
 
 public class RepositorioDeDispositivos {
 
-//	private DAOEmpresa daoEmpresa ;
+	private DAODispositivo daoDispositivo ;
 	private static RepositorioDeDispositivos instance = null ;
 	
-	private RepositorioDeDispositivos(
-//				DAOEmpresa dao
-			)
+	private RepositorioDeDispositivos(DAODispositivo dao)
 	{
-//		this.daoEmpresa = dao ;
+		this.daoDispositivo = dao ;
 	}
 	
-	public static RepositorioDeDispositivos getInstance(
-//				DAOEmpresa dao
-			)
+	public static RepositorioDeDispositivos getInstance(DAODispositivo dao	)
 	{
 		
 		if ( instance == null )
 		{
-			instance = new RepositorioDeDispositivos(
-//						dao
-							) ;
+			instance = new RepositorioDeDispositivos(dao) ;
 		}
 		return instance ;
 	}
 	
 	public void add(Dispositivo dispositivo) throws IOException
 	{
-//		this.daoEmpresa.add(empresa);
+		this.daoDispositivo.add(dispositivo);
 	}
 	
 	public void delete(Dispositivo dispositivo)
 	{
-//		this.daoEmpresa.delete(empresa);
+		this.daoDispositivo.delete(dispositivo);
 	}
 	
-//	public ArrayList<Dispositivo> getAllEmpresas() throws IOException
-//	{
-//		return this.daoEmpresa.getAllEmpresas();
-//	}
+	public ArrayList<Dispositivo> getAllDispositivos() throws IOException
+	{
+		return this.daoDispositivo.getAllDispositivos();
+	}
 	
 	public void update(Dispositivo dispositivo)
 	{
-//		this.daoEmpresa.update(empresa);
+		this.daoDispositivo.update(dispositivo);
 	}
 	
 }

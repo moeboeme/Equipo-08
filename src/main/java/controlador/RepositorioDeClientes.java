@@ -12,48 +12,42 @@ import java.util.ArrayList;
 
 public class RepositorioDeClientes {
 
-//	private DAOEmpresa daoEmpresa ;
+	private DAOCliente daoCliente ;
 	private static RepositorioDeClientes instance = null ;
 	
-	private RepositorioDeClientes(
-//				DAOEmpresa dao
-			)
+	private RepositorioDeClientes(DAOCliente dao)
 	{
-//		this.daoEmpresa = dao ;
+		this.daoCliente = dao ;
 	}
 	
-	public static RepositorioDeClientes getInstance(
-//				DAOEmpresa dao
-			)
+	public static RepositorioDeClientes getInstance(DAOCliente dao)
 	{
 		
 		if ( instance == null )
 		{
-			instance = new RepositorioDeClientes(
-//						dao
-							) ;
+			instance = new RepositorioDeClientes(dao) ;
 		}
 		return instance ;
 	}
 	
 	public void add(Cliente cliente) throws IOException
 	{
-//		this.daoEmpresa.add(empresa);
+		this.daoCliente.add(cliente);
 	}
 	
 	public void delete(Cliente cliente)
 	{
-//		this.daoEmpresa.delete(empresa);
+		this.daoCliente.delete(cliente);
 	}
 	
-//	public ArrayList<Cliente> getAllEmpresas() throws IOException
-//	{
-//		return this.daoEmpresa.getAllEmpresas();
-//	}
+	public ArrayList<Cliente> getAllClientes() throws IOException
+	{
+		return this.daoCliente.getAllClientes();
+	}
 	
 	public void update(Cliente cliente)
 	{
-//		this.daoEmpresa.update(empresa);
+		this.daoCliente.update(cliente);
 	}
 	
 }

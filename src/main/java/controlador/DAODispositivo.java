@@ -13,7 +13,7 @@ public interface DAODispositivo {
 	public ArrayList<Dispositivo> getAllDispositivos() throws IOException;
 	/*
 	 * acerca de update:
-	 * ï¿½ste mï¿½todo va a recibir una dispositivo que va a ser
+	 * Éste método va a recibir una dispositivo que va a ser
 	 * diferente o en el peor de los casos igual a una dispositivo
 	 * que tiene el mismo nombre que una dispositivo que ya estï¿½ en
 	 * el repositorio de dispositivos, ï¿½cï¿½mo lo sï¿½? well... antes de
