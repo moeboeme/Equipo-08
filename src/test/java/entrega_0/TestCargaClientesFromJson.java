@@ -1,6 +1,5 @@
 package entrega_0;
 
-import java.sql.Time;
 import java.util.Date;
 
 /**
@@ -9,5 +8,5 @@ import java.util.Date;
 */
 
 public class TestCargaClientesFromJson {
-
+	
 }

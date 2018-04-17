@@ -6,5 +6,5 @@ package entrega_0;
 */
 
 public class TestPersistenciaDispositivosToJson {
-
+	
 }
