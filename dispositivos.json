@@ -1,0 +1,20 @@
+[
+  {
+    "consumoPorHora": 3.5,
+    "encendido": false,
+    "nombre": "Samsung Galaxy XX",
+    "idDispositivo": 1
+  },
+  {
+    "consumoPorHora": 5.1,
+    "encendido": true,
+    "nombre": "iPhoneZ",
+    "idDispositivo": 2
+  },
+  {
+    "consumoPorHora": 6.0,
+    "encendido": true,
+    "nombre": "sonyVaio",
+    "idDispositivo": 3
+  }
+]

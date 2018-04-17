@@ -1,0 +1,149 @@
+[
+  {
+    "nombre": "Gaston",
+    "apellido": "DiFi",
+    "nombreDeUsuario": "gdifi",
+    "categoria": {
+      "nombre": "r1",
+      "cargoFijo": 3.2,
+      "cargoVariable": 4.1,
+      "consumoMaximo": 2000,
+      "consumoMinimo": 1000
+    },
+    "dispositivos": [
+      {
+        "consumoPorHora": 3.5,
+        "encendido": false,
+        "nombre": "Samsung Galaxy XX",
+        "idDispositivo": 1
+      },
+      {
+        "consumoPorHora": 5.1,
+        "encendido": true,
+        "nombre": "iPhoneZ",
+        "idDispositivo": 2
+      },
+      {
+        "consumoPorHora": 6.0,
+        "encendido": true,
+        "nombre": "sonyVaio",
+        "idDispositivo": 3
+      },
+      {
+        "consumoPorHora": 3.5,
+        "encendido": false,
+        "nombre": "Samsung Galaxy XX",
+        "idDispositivo": 1
+      },
+      {
+        "consumoPorHora": 5.1,
+        "encendido": true,
+        "nombre": "iPhoneZ",
+        "idDispositivo": 2
+      }
+    ],
+    "dni": 11111,
+    "telefono": 12222222,
+    "tipoDocumento": "dni",
+    "password": "unaPass",
+    "identificadorUnico": 0
+  },
+  {
+    "nombre": "Mel",
+    "apellido": "Biela",
+    "nombreDeUsuario": "MelBi",
+    "categoria": {
+      "nombre": "r1",
+      "cargoFijo": 3.2,
+      "cargoVariable": 4.1,
+      "consumoMaximo": 2000,
+      "consumoMinimo": 1000
+    },
+    "dispositivos": [
+      {
+        "consumoPorHora": 3.5,
+        "encendido": false,
+        "nombre": "Samsung Galaxy XX",
+        "idDispositivo": 1
+      },
+      {
+        "consumoPorHora": 5.1,
+        "encendido": true,
+        "nombre": "iPhoneZ",
+        "idDispositivo": 2
+      },
+      {
+        "consumoPorHora": 6.0,
+        "encendido": true,
+        "nombre": "sonyVaio",
+        "idDispositivo": 3
+      },
+      {
+        "consumoPorHora": 3.5,
+        "encendido": false,
+        "nombre": "Samsung Galaxy XX",
+        "idDispositivo": 1
+      },
+      {
+        "consumoPorHora": 5.1,
+        "encendido": true,
+        "nombre": "iPhoneZ",
+        "idDispositivo": 2
+      }
+    ],
+    "dni": 121212,
+    "telefono": 12223333,
+    "tipoDocumento": "dni",
+    "password": "unaPass",
+    "identificadorUnico": 0
+  },
+  {
+    "nombre": "Fran",
+    "apellido": "Fiyi",
+    "nombreDeUsuario": "FranFi",
+    "categoria": {
+      "nombre": "r1",
+      "cargoFijo": 3.2,
+      "cargoVariable": 4.1,
+      "consumoMaximo": 2000,
+      "consumoMinimo": 1000
+    },
+    "dispositivos": [
+      {
+        "consumoPorHora": 3.5,
+        "encendido": false,
+        "nombre": "Samsung Galaxy XX",
+        "idDispositivo": 1
+      },
+      {
+        "consumoPorHora": 5.1,
+        "encendido": true,
+        "nombre": "iPhoneZ",
+        "idDispositivo": 2
+      },
+      {
+        "consumoPorHora": 6.0,
+        "encendido": true,
+        "nombre": "sonyVaio",
+        "idDispositivo": 3
+      },
+      {
+        "consumoPorHora": 3.5,
+        "encendido": false,
+        "nombre": "Samsung Galaxy XX",
+        "idDispositivo": 1
+      },
+      {
+        "consumoPorHora": 5.1,
+        "encendido": true,
+        "nombre": "iPhoneZ",
+        "idDispositivo": 2
+      }
+    ],
+    "dni": 1333,
+    "telefono": 1222555,
+    "tipoDocumento": "dni",
+    "password": "unaPass",
+    "identificadorUnico": 0
+  }
+]

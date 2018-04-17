@@ -10,13 +10,13 @@ import java.util.Date;
 */
 public class Usuario {
 
+	protected transient String nombre;
+	protected transient String apellido ;
+	protected transient String nombreDeUsuario;
 	protected String domicilio;
 	protected Date fechaDeAlta;
 	protected int identificadorUnico;
-	protected String nombre;
-	protected String apellido ;
-	protected String nombreDeUsuario;
-	protected String password;
+	protected transient String password;
 	public Usuario()
 	{
 		
