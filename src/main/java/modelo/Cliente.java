@@ -12,17 +12,17 @@ import java.util.List;
 
 public class Cliente extends Usuario 
 {
-	private Categoria categoria;
 	private String nombre ;
 	private String apellido ;
 	private String nombreDeUsuario ;
+	private Categoria categoria;
 	private List<Dispositivo> dispositivos;
 	private int dni;
 	private long telefono;
 	private String tipoDocumento;
-	private int numeroDocumento;
 
-	public Cliente (Categoria myCategoria,List<Dispositivo> myDispositivos, 
+	public Cliente (String myNombre, String myApellido, String myNombreDeUsuario, 
+			Categoria myCategoria,List<Dispositivo> myDispositivos,
 			int myDni, long myTelefono, String tipoDni)
 	{
 		this.categoria = myCategoria;
@@ -33,6 +33,17 @@ public class Cliente extends Usuario
 		
 	}
 	
+	public void showClienteDetails()
+	{
+		System.out.println("Nombre Cliente: "+this.getNombre());
+		System.out.println("Apellido cliente: "+this.getApellido());
+		System.out.println("Nombre de usuario: "+ this.getNombreDeUsuario());
+		System.out.println("Categoría: "+ this.getCategoria());
+		System.out.println("Dispositivos: "+ this.getDispositivos());
+		System.out.println("Indentificador unico"+ this.getIdentificadorUnico());
+		System.out.println("Passowrd: "+ this.getPassword());
+		System.out.println();
+	}
 	
 	public int dispositivosApagados(){
 		return (int) this.dispositivos.stream().filter(d -> !d.estaEncendido()).count();
@@ -119,16 +130,6 @@ public class Cliente extends Usuario
 
 	public void setTipoDocumento(String tipoDocumento) {
 		this.tipoDocumento = tipoDocumento;
-	}
-
-
-	public int getNumeroDocumento() {
-		return numeroDocumento;
-	}
-
-
-	public void setNumeroDocumento(int numeroDocumento) {
-		this.numeroDocumento = numeroDocumento;
 	}
 
 
