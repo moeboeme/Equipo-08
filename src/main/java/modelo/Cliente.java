@@ -22,6 +22,11 @@ public class Cliente extends Usuario
 	private String tipoDocumento;
 	private String password ;
 
+	public Cliente()
+	{
+		
+	}
+	
 	public Cliente (String myNombre, String myApellido, String myNombreDeUsuario, 
 			Categoria myCategoria,List<Dispositivo> myDispositivos,
 			int myDni, long myTelefono, String tipoDni, String myPassword)
@@ -129,9 +134,11 @@ public class Cliente extends Usuario
 	public int dispositivosEncendidos(){
 		return (int) dispositivos.stream().filter(d -> d.estaEncendido()).count();
 	}
+	
+	public String toString()
+	{
+		return "clientes" ;
+	}
 
-	
-	
-	
 
 }//end Cliente

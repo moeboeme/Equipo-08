@@ -12,6 +12,11 @@ public class Dispositivo {
 	private boolean encendido;
 	private String nombre;
 	private int idDispositivo ;
+	
+	public Dispositivo()
+	{
+		
+	}
 
 	public Dispositivo(String myNombre, boolean myEstaEncendido, 
 				double myConsumoPorHora, int myIdDispositivo)
@@ -30,7 +35,7 @@ public class Dispositivo {
 	public void setIdDispositivo(int idDispositivo) {
 		this.idDispositivo = idDispositivo;
 	}
-
+	
 	public void showDispositivoDetails()
 	{
 		System.out.println("Consumo por hora: "+this.getConsumoPorHora());
@@ -62,6 +67,11 @@ public class Dispositivo {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+	
+	public String toString()
+	{
+		return "dispositivos" ;
 	}
 
 }//end Dispositivo

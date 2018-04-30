@@ -8,7 +8,7 @@ import java.util.Date;
 *Apr 16, 2018 10:02:59 AM 
 *
 */
-public class Usuario {
+public abstract class Usuario {
 
 	protected transient String nombre;
 	protected transient String apellido ;
