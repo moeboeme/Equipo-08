@@ -27,14 +27,9 @@ public class FilePath {
 		return instance ;
 	}
 	
-	public String getClientesJsonPath()
+	public String getJsonPath( Object objectType )
 	{
-		return this.filePath + "\\clientes.json" ;
-	}
-	
-	public String getDispositivosJsonPath()
-	{
-		return this.filePath + "\\dispositivos.json" ;
+		return this.filePath + "\\"+ objectType.toString() +".json" ;
 	}
 	
 }

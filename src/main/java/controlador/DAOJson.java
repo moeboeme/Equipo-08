@@ -151,6 +151,35 @@ public class DAOJson implements DAO{
 			e.printStackTrace();
 		}
 	}
+
+	@Override
+	public void delete(Dispositivo dispositivo) {
+		
+		try {
+			List<Dispositivo>dispositivos = getAllDispositivos();
+			List<Dispositivo> dispositivosMenosDispositivoAEliminar = 
+					dispositivos.stream()
+						.filter(e -> !dispositivo.getNombre().equals(e.getNombre()))
+						.collect(Collectors.toList()) ;
+			this.listaDeDispositivosToJsonFile(dispositivosMenosDispositivoAEliminar);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+	}
+
+	@Override
+	public void update(Dispositivo dispositivo) {
+		try {
+			ArrayList<Dispositivo> dispositivos = this.getAllDispositivos();
+			int index = this.find(dispositivo.getNombre()) ;
+			dispositivos.set(index, dispositivo) ;
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 }
