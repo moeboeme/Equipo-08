@@ -19,24 +19,24 @@ import modelo.Dispositivo;
 public class TestJsonDispositivos {
 	
 	private ArrayList<Dispositivo> dispositivos ;
-	private RepositorioDeDispositivos repoDispositivos ;
+	private Repositorio repo ;
 	private String filePath ;
-	private DAOJsonDispositivo dao ;
+	private DAOJson dao ;
 	
 	@Before
 	public void init()
 	{
+		Dispositivo dispositivoDummy= new Dispositivo() ;
 		FilePath path = FilePath.getInstance() ;
-		this.filePath = path.getDispositivosJsonPath() ;
-		dao = new DAOJsonDispositivo() ;
-		repoDispositivos = RepositorioDeDispositivos.getInstance(dao) ;
+		this.filePath = path.getJsonPath(dispositivoDummy) ;
+		this.dao = new DAOJson(dispositivoDummy) ;
+		repo = Repositorio.getInstance(this.dao) ;
 	}
 	
 	@Test
 	public void archivosJsonEstanEnActualSistema()
 	{
 		File currentDir = new File (filePath) ;
-		//TODO \\indicadores.json , etc...
 		Assert.assertTrue(currentDir.exists());
 	}
 	
@@ -48,9 +48,9 @@ public class TestJsonDispositivos {
 		try {
 			//el DAOJsonDispositivo se encarga de persistir las dispositivos en arch json
 			//este no es trabajo del repo, es coherente delegárselo al dao
-			dao.dispositivosToJsonFile(dispositivos);
+			dao.listaDeDispositivosToJsonFile(dispositivos);
 			//
-			List<Dispositivo> dispositivosQueMeDioElRepo = repoDispositivos.getAllDispositivos();
+			List<Dispositivo> dispositivosQueMeDioElRepo = repo.getAllDispositivos();
 			TestJsonDispositivos.showDispositivoObjects(dispositivosQueMeDioElRepo);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -84,7 +84,7 @@ public class TestJsonDispositivos {
 	public void leoDispositivosYNombresSonCorresctos()
 	{
 		try{
-			this.dispositivos = repoDispositivos.getAllDispositivos() ;
+			this.dispositivos = repo.getAllDispositivos() ;
 			Assert.assertEquals("Samsung Galaxy XX", dispositivos.get(0).getNombre());
 			Assert.assertEquals("iPhoneZ", dispositivos.get(1).getNombre());
 			Assert.assertEquals("sonyVaio", dispositivos.get(2).getNombre());
