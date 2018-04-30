@@ -12,34 +12,22 @@
     },
     "dispositivos": [
       {
-        "consumoPorHora": 3.5,
+        "consumoPorHora": 0.0,
         "encendido": false,
-        "nombre": "Samsung Galaxy XX",
-        "idDispositivo": 1
+        "nombre": "Gaston",
+        "idDispositivo": 0
       },
       {
-        "consumoPorHora": 5.1,
-        "encendido": true,
-        "nombre": "iPhoneZ",
-        "idDispositivo": 2
-      },
-      {
-        "consumoPorHora": 6.0,
-        "encendido": true,
-        "nombre": "sonyVaio",
-        "idDispositivo": 3
-      },
-      {
-        "consumoPorHora": 3.5,
+        "consumoPorHora": 0.0,
         "encendido": false,
-        "nombre": "Samsung Galaxy XX",
-        "idDispositivo": 1
+        "nombre": "Mel",
+        "idDispositivo": 0
       },
       {
-        "consumoPorHora": 5.1,
-        "encendido": true,
-        "nombre": "iPhoneZ",
-        "idDispositivo": 2
+        "consumoPorHora": 0.0,
+        "encendido": false,
+        "nombre": "Fran",
+        "idDispositivo": 0
       }
     ],
     "dni": 11111,
@@ -61,34 +49,22 @@
     },
     "dispositivos": [
       {
-        "consumoPorHora": 3.5,
+        "consumoPorHora": 0.0,
         "encendido": false,
-        "nombre": "Samsung Galaxy XX",
-        "idDispositivo": 1
+        "nombre": "Gaston",
+        "idDispositivo": 0
       },
       {
-        "consumoPorHora": 5.1,
-        "encendido": true,
-        "nombre": "iPhoneZ",
-        "idDispositivo": 2
-      },
-      {
-        "consumoPorHora": 6.0,
-        "encendido": true,
-        "nombre": "sonyVaio",
-        "idDispositivo": 3
-      },
-      {
-        "consumoPorHora": 3.5,
+        "consumoPorHora": 0.0,
         "encendido": false,
-        "nombre": "Samsung Galaxy XX",
-        "idDispositivo": 1
+        "nombre": "Mel",
+        "idDispositivo": 0
       },
       {
-        "consumoPorHora": 5.1,
-        "encendido": true,
-        "nombre": "iPhoneZ",
-        "idDispositivo": 2
+        "consumoPorHora": 0.0,
+        "encendido": false,
+        "nombre": "Fran",
+        "idDispositivo": 0
       }
     ],
     "dni": 121212,
@@ -110,34 +86,22 @@
     },
     "dispositivos": [
       {
-        "consumoPorHora": 3.5,
+        "consumoPorHora": 0.0,
         "encendido": false,
-        "nombre": "Samsung Galaxy XX",
-        "idDispositivo": 1
+        "nombre": "Gaston",
+        "idDispositivo": 0
       },
       {
-        "consumoPorHora": 5.1,
-        "encendido": true,
-        "nombre": "iPhoneZ",
-        "idDispositivo": 2
-      },
-      {
-        "consumoPorHora": 6.0,
-        "encendido": true,
-        "nombre": "sonyVaio",
-        "idDispositivo": 3
-      },
-      {
-        "consumoPorHora": 3.5,
+        "consumoPorHora": 0.0,
         "encendido": false,
-        "nombre": "Samsung Galaxy XX",
-        "idDispositivo": 1
+        "nombre": "Mel",
+        "idDispositivo": 0
       },
       {
-        "consumoPorHora": 5.1,
-        "encendido": true,
-        "nombre": "iPhoneZ",
-        "idDispositivo": 2
+        "consumoPorHora": 0.0,
+        "encendido": false,
+        "nombre": "Fran",
+        "idDispositivo": 0
       }
     ],
     "dni": 1333,
