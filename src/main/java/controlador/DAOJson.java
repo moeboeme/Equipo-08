@@ -18,10 +18,10 @@ import modelo.Dispositivo;
 
 public class DAOJson implements DAO{
 	
-	Gson gson ;
-	String filePath ;
-	BufferedReader bufferedReader ;
-	BufferedWriter bufferedWriter ;
+	private Gson gson ;
+	private String filePath ;
+	private BufferedReader bufferedReader ;
+	private BufferedWriter bufferedWriter ;
 	
 	public DAOJson ( Object tipoDeObjeto )
 	{
@@ -42,7 +42,7 @@ public class DAOJson implements DAO{
 		clientes.add(cliente) ;
 		this.listaDeClientesToJsonFile(clientes);
 	}
-	
+	@Override
 	public void add(Dispositivo dispositivo) throws IOException {
 		List<Dispositivo> dispositivos = this.getAllDispositivos() ;
 		dispositivos.add(dispositivo) ;
@@ -59,6 +59,22 @@ public class DAOJson implements DAO{
 						.filter(e -> !cliente.getNombre().equals(e.getNombre()))
 						.collect(Collectors.toList()) ;
 			this.listaDeClientesToJsonFile(clientesMenosClienteAEliminar);
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		
+	}
+	
+	@Override
+	public void delete(Dispositivo dispositivo) {
+		
+		try {
+			List<Dispositivo>dispositivos = getAllDispositivos();
+			List<Dispositivo> dispositivosMenosDispositivoAEliminar = 
+					dispositivos.stream()
+						.filter(e -> !dispositivo.getNombre().equals(e.getNombre()))
+						.collect(Collectors.toList()) ;
+			this.listaDeDispositivosToJsonFile(dispositivosMenosDispositivoAEliminar);
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -122,15 +138,30 @@ public class DAOJson implements DAO{
 		this.bufferedReader.close();
 		return clienteSerializada.toString() ;
 	}
-	
-	public int find(String nombreCliente) throws IOException
+	@Override
+	public int findCliente (String nombreDeCliente) throws IOException
 	{
 		List<Cliente> clientes;
 		try {
 			clientes = this.getAllClientes();
 			List<String> nombresDeClientes = new ArrayList<>() ;
 			clientes.forEach(e -> nombresDeClientes.add(e.getNombre()));
-			int index = nombresDeClientes.indexOf(nombreCliente) ;
+			int index = nombresDeClientes.indexOf(nombreDeCliente) ;
+			return index ;
+		} catch (IOException e1) {
+			e1.printStackTrace();
+			return -1 ;
+		}
+	}
+	@Override
+	public int findDispositivo (String nombreDeDispositivo) throws IOException
+	{
+		List<Dispositivo> dispositivos;
+		try {
+			dispositivos = this.getAllDispositivos();
+			List<String> nombresDeDispositivos = new ArrayList<>() ;
+			dispositivos.forEach(e -> nombresDeDispositivos.add(e.getNombre()));
+			int index = nombresDeDispositivos.indexOf(nombreDeDispositivo) ;
 			return index ;
 		} catch (IOException e1) {
 			e1.printStackTrace();
@@ -143,7 +174,7 @@ public class DAOJson implements DAO{
 		
 		try {
 			ArrayList<Cliente> clientes = this.getAllClientes();
-			int index = this.find(cliente.getNombre()) ;
+			int index = this.findCliente(cliente.getNombre()) ;
 			clientes.set(index, cliente) ;
 			
 			
@@ -152,33 +183,27 @@ public class DAOJson implements DAO{
 		}
 	}
 
-	@Override
-	public void delete(Dispositivo dispositivo) {
-		
-		try {
-			List<Dispositivo>dispositivos = getAllDispositivos();
-			List<Dispositivo> dispositivosMenosDispositivoAEliminar = 
-					dispositivos.stream()
-						.filter(e -> !dispositivo.getNombre().equals(e.getNombre()))
-						.collect(Collectors.toList()) ;
-			this.listaDeDispositivosToJsonFile(dispositivosMenosDispositivoAEliminar);
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		
-	}
+	
 
 	@Override
 	public void update(Dispositivo dispositivo) {
 		try {
 			ArrayList<Dispositivo> dispositivos = this.getAllDispositivos();
-			int index = this.find(dispositivo.getNombre()) ;
+			int index = this.findCliente(dispositivo.getNombre()) ;
 			dispositivos.set(index, dispositivo) ;
 			
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public BufferedWriter getBufferedWriter() {
+		return bufferedWriter;
+	}
+
+	public void setBufferedWriter(BufferedWriter bufferedWriter) {
+		this.bufferedWriter = bufferedWriter;
 	}
 	
 	

@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 public interface DAO {
 
+	public int findCliente (String nombreDeCliente) throws IOException ;
+	public int findDispositivo (String nombreDeDispositivo) throws IOException ;
 	public void add (Cliente cliente) throws IOException ;
 	public void add (Dispositivo dispositivo) throws IOException ;
 	public void delete (Cliente cliente) ;
