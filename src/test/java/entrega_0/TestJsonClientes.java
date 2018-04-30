@@ -21,37 +21,37 @@ import modelo.Dispositivo;
 public class TestJsonClientes {
 	
 	private ArrayList<Cliente> clientes ;
-	private RepositorioDeClientes repoClientes ;
+	private static Repositorio repo ;
 	private String filePath ;
-	private DAOJsonCliente dao ;
+	private DAOJson dao ;
 	
 	@Before
 	public void init()
 	{
 		FilePath path = FilePath.getInstance() ;
-		this.filePath = path.getClientesJsonPath() ;
-		dao = new DAOJsonCliente() ;
-		repoClientes = RepositorioDeClientes.getInstance(dao) ;
+		Cliente clienteDummy = new Cliente() ;
+		this.filePath = path.getJsonPath(clienteDummy) ;
+		this.dao = new DAOJson(clienteDummy) ;
+		repo = Repositorio.getInstance(this.dao) ;
 	}
 	
 	@Test
-	public void archivosJsonEstanEnActualSistema()
+	public void archivosJsonEstanEnActualSistema() throws IOException
 	{
 		File currentDir = new File (filePath) ;
+		currentDir.createNewFile();
 		Assert.assertTrue(currentDir.exists());
 	}
 	
 	@Test
 	public void escriboClientesDummy() throws IOException
 	{
-		
 		List<Cliente> clientes = TestJsonClientes.createDummyClientes();
 		try {
 			//el DAOJsonCliente se encarga de persistir las clientes en arch json
 			//este no es trabajo del repo, es coherente delegárselo al dao
-			dao.clientesToJsonFile(clientes);
-			//
-			List<Cliente> clientesQueMeDioElRepo = repoClientes.getAllClientes();
+			dao.listaDeClientesToJsonFile(clientes);
+			List<Cliente> clientesQueMeDioElRepo = repo.getAllClientes();
 			TestJsonClientes.showClienteObjects( clientesQueMeDioElRepo );
 		} catch (IOException e) {
 			e.printStackTrace() ;
@@ -66,16 +66,10 @@ public class TestJsonClientes {
 	
 	public static List<Cliente> createDummyClientes() throws IOException
 	{
-		
 		List<Cliente> clientes = new ArrayList<Cliente>() ;
 		Categoria r1 = new Categoria( "r1", 3.2, 4.1, 2000, 1000 ) ;
-		DAOJsonDispositivo dao = new DAOJsonDispositivo() ;
-		RepositorioDeDispositivos repoDisp = RepositorioDeDispositivos.getInstance(dao) ;
-		List<Dispositivo> listaDispositivosUsuarioGaston = repoDisp.getAllDispositivos() ;
+		List<Dispositivo> listaDispositivosUsuarioGaston = TestJsonClientes.repo.getAllDispositivos() ;
 
-		listaDispositivosUsuarioGaston.add( listaDispositivosUsuarioGaston.get(0) ) ;
-		listaDispositivosUsuarioGaston.add( listaDispositivosUsuarioGaston.get(1) ) ;
-		
 		Cliente usuarioGaston = new Cliente("Gaston", "DiFi", "gdifi" ,r1, 
 				listaDispositivosUsuarioGaston, 11111, 12222222, "dni", "unaPass") ;
 		usuarioGaston.showClienteDetails();
@@ -97,7 +91,7 @@ public class TestJsonClientes {
 	public void leoClientesYNombresSonCorresctos()
 	{
 		try{
-			this.clientes = repoClientes.getAllClientes() ;
+			this.clientes = TestJsonClientes.repo.getAllClientes() ;
 			Assert.assertEquals("Gaston", clientes.get(0).getNombre());
 			Assert.assertEquals("Mel", clientes.get(1).getNombre());
 			Assert.assertEquals("Fran", clientes.get(2).getNombre());
